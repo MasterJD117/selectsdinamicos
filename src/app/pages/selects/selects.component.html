@@ -1,0 +1,34 @@
+<!-- OPTIONS MAINS -->
+<div class="row">
+  <div class="col-5">
+    <select [(ngModel)]="modelOptions" class="form-select">
+      <option *ngFor="let option of options" [ngValue]="option">{{option.name}}</option>
+    </select>
+  </div>
+  <div class="col-5">
+    <select [(ngModel)]="modelOptions2" class="form-select">
+      <option *ngFor="let option2 of options2" [ngValue]="option2">{{option2.namev2}}</option>
+    </select>
+  </div>
+  <div class="col-2">
+    <button type="button" class="btn btn-success" (click)="agregar()">Agregar</button>
+  </div>
+</div>
+
+<hr>
+
+<div class="row" *ngFor="let item of selectedArr">
+  <!-- {{item.option.id}} - {{item.option2.idop2}} -->
+  <div class="col-6">
+    <!-- {{item.name}} -->
+    <select [(ngModel)]="item.option.id" class="form-select">
+      <option [value]="item.option.id">{{item.option.name}}</option>
+    </select>
+  </div>
+  <div class="col-6">
+    <!-- {{item.namev2}}}} -->
+    <select [(ngModel)]="item.option2.idop2" class="form-select">
+      <option [value]="item.option2.idop2">{{item.option2.namev2}}</option>
+    </select>
+  </div>
+</div>
